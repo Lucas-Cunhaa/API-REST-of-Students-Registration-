@@ -1,6 +1,9 @@
+const dotenv = require('dotenv') 
+dotenv.config()
 const express = require('express');
 const homeRouter = require('./src/routes/homeRoutes')
-
+const db = require('./src/models')
+ 
 class App {
   constructor () {
       this.app = express()
