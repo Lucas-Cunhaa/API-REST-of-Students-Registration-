@@ -1,8 +1,14 @@
+const Student = require('../database/models/student')
 class HomeController {
-    index(req, res) {
-        res.json({
-            "Ok":true
-        })
-    }
+ async index(req, res) {
+    const newStudent = await Student.create({
+        name: 'Luiz', 
+        email: 'luiz@gmail.com',
+        age: 18 
+    })
+    res.json(newStudent)
+ }
+    
+
 }
 module.exports = new HomeController()
